@@ -8,6 +8,7 @@ function generateGenderData()
     document.getElementById('secondNameOutput').innerText = initPerson.secondname;
     document.getElementById('photo').src = `images/${initPerson.genderImage}.svg`;
     document.getElementById('birthYearOutput').innerText = initPerson.dateBornP;
+    document.getElementById('prof').innerText = initPerson.professionName;
 };
 
 
@@ -20,6 +21,7 @@ function generateGenderDataNull()
     document.getElementById('secondNameOutput').innerText = "Нет данных";
     document.getElementById('photo').src = `images/nophoto.svg`;
     document.getElementById('birthYearOutput').innerText = "Нет данных";
+    document.getElementById('prof').innerText = "Нет данных";
 };
 
 document.querySelector('#update').addEventListener('click', generateGenderData);

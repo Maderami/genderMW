@@ -72,7 +72,36 @@ const personGenerator = {
             "id_10": "Ефросинья"
         }
     }`,
-
+    profMaleName: `{
+        "count": 10,
+        "list": {     
+            "id_1": "Програмист",
+            "id_2": "Врач",
+            "id_3": "Маркетолог",
+            "id_4": "Финансовый аналитик",
+            "id_5": "Инженер",
+            "id_6": "Физик",
+            "id_7": "Электрик",
+            "id_8": "Нефтяник",
+            "id_9": "Автомеханик",
+            "id_10": "Менеджер по продажам"
+        }
+    }`,
+    profFemale:`{
+        "count": 10,
+        "list": {
+            "id_1": "Фармацевт",
+            "id_2": "Методист",
+            "id_3": "Медсестра",
+            "id_4": "Воспитатель",
+            "id_5": "Врач-косметолог",
+            "id_6": "Логопед",
+            "id_7": "Секретарь",
+            "id_8": "Библиотекарь",
+            "id_9": "Швея",
+            "id_10": "Лаборант"
+        }
+    }`,
     GENDER_MALE: 'Мужчина',
     GENDER_FEMALE: 'Женщина',
 
@@ -147,6 +176,17 @@ const personGenerator = {
    
     return dateBorn.toLocaleString("ru", options);
     },
+    randomProfession: function() {
+        let professionName;
+
+         if (gender == this.GENDER_MALE){
+            professionName = this.profMaleName;
+         } else if (gender == this.GENDER_FEMALE){
+            professionName = this.profFemale;
+         }
+        return this.randomValue(professionName);
+
+    },
     getPerson: function () {
         this.person = {};
         this.person.gender = this.randomGender();
@@ -155,6 +195,7 @@ const personGenerator = {
         this.person.firstName = this.randomFirstName();
         this.person.genderImage = this.randomGenderPhoto();
         this.person.dateBornP = this.randomDateBorn();
+        this.person.professionName = this.randomProfession();
         return this.person;
     }
 };
