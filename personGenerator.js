@@ -127,12 +127,12 @@ const personGenerator = {
     randomSecondname: function() {
          
         console.log(gender + 'genderSecond');
-        let Secondname = this.randomValue(this.secondNameJson);
+        let Secondname = this.randomValue(this.firstNameMaleJson)+'ов';
         if(gender == this.GENDER_FEMALE) {
             wifeSecondname = Secondname;
-            return wifeSecondname.substring(0, wifeSecondname.length - 2) + 'на';  
+            return wifeSecondname + 'на';  
         } else {
-            return Secondname;
+            return Secondname+'ич';
         }
         
 
